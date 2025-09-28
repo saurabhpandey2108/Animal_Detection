@@ -1,0 +1,3 @@
+[console_scripts]
+animal-detection = animal_detection.main:main
+train-animal-detector = animal_detection.train_animal_detector:main

@@ -1,0 +1,14 @@
+artifact_uri: file:D:/Project/Animal_Detection/yolo_classification_dataset/runs/mlflow/104633148602701343/d31c16c7c8aa49d5813cbcf13ffdc4e8/artifacts
+end_time: 1759003071683
+entry_point_name: ''
+experiment_id: '104633148602701343'
+lifecycle_stage: active
+run_id: d31c16c7c8aa49d5813cbcf13ffdc4e8
+run_name: animal_detection_training
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759003064264
+status: 3
+tags: []
+user_id: saura
