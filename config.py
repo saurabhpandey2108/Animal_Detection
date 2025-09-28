@@ -1,17 +1,22 @@
+"""Configuration file for the Animal Detection project.
+
+This file contains configuration variables for the Animal Detection project.
 """
-Configuration file for the Animal Detection project.
-"""
+
 import os
 
 # Model configuration
 MODEL_NAME = "resnet18"
-CONFIDENCE_THRESHOLD = 0.7
+# Global default (kept for backward compat in any old code references)
+CONFIDENCE_THRESHOLD = 0.3
 
+# New, more granular thresholds
+DET_CONF_THRESHOLD = 0.45   # detector (boxes)
+CLS_CONF_THRESHOLD = 0.55   # classifier (labels)
+MIN_BOX_AREA = 1500         # ignore tiny boxes (in pixels)
 # Dataset configuration
 DATASET_PATH = os.path.join(os.path.dirname(__file__), "data")
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "models")
-
-# Animal classes (90 different animals from the dataset)
 ANIMAL_CLASSES = [
     'antelope', 'bat', 'beaver', 'bee', 'bison', 'boar', 'buffalo', 'butterfly', 'cat', 'caterpillar',
     'chimpanzee', 'cockroach', 'cow', 'coyote', 'crab', 'crocodile', 'deer', 'dog', 'dolphin', 'donkey',

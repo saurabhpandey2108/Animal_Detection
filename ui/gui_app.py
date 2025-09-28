@@ -13,7 +13,7 @@ import os
 # Add the project root to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from animal_detection.utils.detection import AnimalDetector, initialize_camera, release_camera
+from utils.detection import AnimalDetector, initialize_camera, release_camera
 
 
 class AnimalDetectionGUI:
@@ -208,8 +208,8 @@ class AnimalDetectionGUI:
                 fps = frame_count / elapsed_time if elapsed_time > 0 else 0
                 self.fps_var.set(f"{fps:.1f}")
                 
-                # Process every 3rd frame for performance
-                if frame_count % 3 == 0 and self.detector:
+                # Run detection every frame so boxes are always up-to-date
+                if self.detector:
                     # Detect animal
                     animal_name, confidence, features = self.detector.detect_animal(frame)
                     

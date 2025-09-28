@@ -54,8 +54,9 @@ def run_cli_mode():
         cap = initialize_camera()
         print("Camera initialized successfully!")
         
-        # Initialize YOLO animal detector
-        detector = AnimalDetector()
+        # Initialize YOLO animal detector with your custom-trained model
+        detector = AnimalDetector(model_path='best.pt')
+        
         print("YOLO animal detector model loaded!")
         
         print("\nStarting real-time animal detection...")
